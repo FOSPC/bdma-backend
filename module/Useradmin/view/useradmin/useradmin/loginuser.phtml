@@ -1,0 +1,53 @@
+<?php
+
+if (isset($_GET['status']) && $_GET['status']=="u_login" ) {
+  echo '<div class="card-panel red lighten-2">vous devez dabord vous connecter</div>';
+}
+if (isset($_GET['status']) && $_GET['status']=="filed_login" ) {
+  echo '<div class="card-panel red lighten-2">e-mail ou mot de passe ne sont pas correctes, essayez à nouveau</div>';
+}
+
+if (isset($_GET['status']) && $_GET['status']=="no_permission" ) {
+  echo "<div class='card-panel red lighten-2'>vous n'avez pas le droit pour s'authentifier veuillez réessayer plus tard</div>";
+}
+
+?>
+<div class="row">
+  <div class="col  s12 m12 l4">.</div>
+  <div class="col  s12 m12 l4">
+    <div class="card small z-depth-2  " id="log" style="height:auto; border-radius:10px;">
+
+        <div class="row">
+        <div style="width:100%;height:auto;padding:3px;margin:auto;background-color:teal;color:white" class=" center down col s12 m12 l12">
+          <h5>User Admin</h5>    
+          <i class="material-icons large">perm_identity</i>
+        </div>
+        </div>
+
+      <form method="POST" name="admin" action="/useradmin/loginuser" role="form" id="admin">        
+        <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">email</i>
+              <input type="email" name="email" class="validate valid" id="email" value="">            
+              <label for="email" class="active">Email</label>
+            </div>
+            <div class="input-field col s12">
+              <i class="material-icons prefix">vpn_key</i>
+              <input type="password" name="password" class="validate valid" id="password" value="">            
+              <label for="password" class="active">Password</label>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col s4 m4 l4">.</div>
+          <div class="col s4 m4 l4">
+            <i class="waves-effect waves-light btn waves-input-wrapper" style="">
+            <input type="submit" name="submit" id="submitbutton" class="waves-button-input" value="Login"></i>          
+          </div>
+          <div class="col s4 m4 l4">.</div>
+          <br><br><br>
+        </div>
+      </form>    
+    </div>
+   </div>
+  <div class="col  s12 m12 l4">.</div>
+</div>

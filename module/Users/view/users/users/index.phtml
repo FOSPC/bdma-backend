@@ -1,0 +1,125 @@
+ <?php
+ $title = 'Les Utilisateurs';
+ $this->headTitle($title);
+ ?>
+<?php
+
+if (isset($_GET['status']) && $_GET['status']=="y" ) {
+  echo '<div class="card-panel green lighten-2">la désactivation a réussi</div>';
+}
+
+if (isset($_GET['status']) && $_GET['status']=="nouser" ) {
+  echo '<div class="card-panel green lighten-2">il faut spécifier le code pour la modification</div>';
+}
+
+if (isset($_GET['status']) && $_GET['status']=="yupdate" ) {
+  echo '<div class="card-panel green lighten-2">la mise a jour a réussi</div>';
+}
+
+
+
+if (isset($_GET['status']) && $_GET['status']=="ydmn" ) {
+  echo '<div class="card-panel green lighten-2">l admin a ete change pour affecte les changement se deconnecte et réessayer avec le nouveau compte admin</div>';
+}
+
+
+if (isset($_GET['status']) && $_GET['status']=="n" ) {
+  echo '<div class="card-panel red lighten-2">vous devez specifier le code de lutilisateur pour le désactiver</div>';
+}
+
+if (isset($_GET['status']) && $_GET['status']=="ohh" ) {
+  echo "<div class='card-panel red lighten-2'>probleme dans l'exécution de cette operation</div>";
+}
+
+if (isset($_GET['status']) && $_GET['status']=="filed_add" ) {
+  echo "<div class='card-panel red lighten-2'>probleme dans l'ajout</div>";
+}
+
+if (isset($_GET['status']) && $_GET['status']=="y_add" ) {
+  echo "<div class='card-panel green lighten-2'>l'ajout terminer</div>";
+}
+
+if (isset($_GET['status']) && $_GET['status']=="erreur_fetching_view_data" ) {
+  echo "<div class='card-panel red lighten-2'>probleme de chargement des donnees</div>";
+}
+
+?>
+ <h1 class="center"><?php echo $this->escapeHtml($title); ?></h1>
+
+
+
+ <br/>
+<a style="margin-left:100px;" href="/users/add" class="waves-effect waves-teal btn ">Ajouter un utilisateur</a>
+<br/>
+
+
+<br/>
+      <div class="row">
+      <div class="col  s12 m12 l12">
+          <table class="table hoverable">
+            <thead>
+              <tr>
+                <th>active</th>
+                <th>public</th>
+                <th>admin</th>
+                <th>company</th>
+                <th>gender</th>
+                <th>name</th>
+                <th>f-name</th>
+                <th>lang</th>
+                <th>phone</th>
+                <th>gsm</th>
+                <th>operation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($this->paginator as $user) {
+              ?>
+                    <tr>
+                      <td><?php echo $user->active; ?></td>
+                      <td><?php echo $user->public; ?></td>
+                      <td><?php echo $user->admin; ?></td>
+                      <td><?php echo $user->company; ?></td>
+                      <td><?php echo $user->gender; ?></td>
+                      <td><?php echo $user->name; ?></td>
+                      <td><?php echo $user->firstname; ?></td>
+                      <td><?php echo $user->lang; ?></td>
+                      <td><?php echo $user->phone; ?></td>
+                      <td><?php echo $user->gsm; ?></td>
+           <td>
+<a data-position="bottom" data-delay="50" data-tooltip="supprimer" class="tooltipped btn waves-effect waves-red" href="/users/delete/<?php echo $user->id; ?>">
+              <i class="material-icons">delete</i>
+           </a>
+<a data-position="bottom" data-delay="50" data-tooltip="modifier" class="tooltipped btn waves-effect waves-red" href="/users/edit/<?php echo $user->id ;?>">
+              <i class="material-icons">system_update_alt</i>
+           </a>
+
+
+           </td>
+                    </tr>
+              <?php }?>
+
+            </tbody>
+          </table>
+      </div>
+      </div>  
+
+
+<?php
+ // add at the end of the file after the table
+ echo $this->paginationControl(
+     // the paginator object
+     $this->paginator,
+     // the scrolling style
+     'sliding',
+     // the partial to use to render the control
+     'partial/paginator.phtml',
+     // the route to link to when a user clicks a control link
+     array(
+         'route' => 'users'
+     )
+ );
+ ?>
+
+

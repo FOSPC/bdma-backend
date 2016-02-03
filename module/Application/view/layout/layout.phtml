@@ -1,0 +1,188 @@
+<?php 
+use Zend\Session\Container;
+echo $this->doctype(); 
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <?php echo $this->headTitle('bdma')->setSeparator(' - ')->setAutoEscape(false) ?>
+      <?php echo $this->headMeta()
+                      ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+                      ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+      ?>
+      <?php
+          echo $this->headLink()
+          ->prependStylesheet($this->basePath('css/style.css'))
+          ->prependStylesheet($this->basePath('w3/w3.css'))
+          ->prependStylesheet($this->basePath('css/materialize.css'))
+          ->prependStylesheet($this->basePath('css/materialdesignicons.min.css'))
+      ?>
+      <?php 
+           echo $this->headScript()
+                ->prependFile($this->basePath('js/script.js'))
+                ->prependFile($this->basePath('js/respond.min.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
+                ->prependFile($this->basePath('js/html5shiv.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',)); 
+      ?>
+    <?php echo $this->inlineScript()->appendFile($this->basePath() . '/js/jquery.js')?>
+    <?php echo $this->inlineScript()->appendFile($this->basePath() . '/js/materialize.min.js')?>
+      <meta charset="utf-8"    content="text/html"/>
+      <meta name="description" content="made with love by arbib soufiane + helpp of bootstrap V3 Framework">
+      <meta name="author" content="arbib soufine">
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+<body style="background-color: #E0F2F1;" >
+    <!--/////////////////////////Body content///////////////////////////////-->
+
+       <!-- petit progress bar qui s'affiche au cours de chargement du page -->
+          <div id="preloading">
+          <br/><br/><br/><br/>
+          <br/><br/><br/><br/>
+          <h1 class="center">Chargement...</h1>
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+          </div>
+
+
+
+<!--affichage du menu si le système trouvé une session -->
+<?php
+  $session = new Container('admin'); 
+  if ($session->offsetExists('email') && $session->offsetGet('user')=='admin'){
+        $email = $session->offsetGet('email'); 
+        $url_logout = $this->url('admin',array('action' => 'logout'));
+        $url_index = $this->url('admin',array('action' => 'index'));
+        echo '
+          <nav>
+              <div class="nav-wrapper light-blue darken-4">
+                <a href="'.$url_index.'" class="brand-logo">&nbsp;bdma</a>
+                <a href="#!" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">dialpad</i></a>
+                <ul class="right hide-on-med-and-down" id="screen-demo">
+                  <li style="width:120px;"><i class="tiny material-icons">business</i>
+
+                  <a href="/company">&nbsp;sociétés</a></li>
+
+                  <li><i class="tiny material-icons">shopping_cart</i>
+
+                  <a href="/product">&nbsp;produits</a></li>
+
+                  <li style="width:100px;"><i class="tiny material-icons">language</i>
+
+                  <a href="/country">&nbsp;Pays</a></li>
+
+                  <li><i class="tiny material-icons">class</i>
+
+                  <a href="/invoice">&nbsp;Commandes</a></li>
+                  <li><i class="tiny material-icons">supervisor_account</i>
+
+                  <a href="/users">Utilisateur</a></li>
+
+               </ul>
+                <ul class="side-nav black" id="mobile-demo">
+                  <li><i class="tiny material-icons">business</i><a href="#">&nbsp;sociétés</a></li>
+                  <li><i class="tiny material-icons">shopping_cart</i><a href="#">&nbsp;produits</a></li>
+                  <li><i class="tiny material-icons">language</i><a href="#">&nbsp;Pays</a></li>
+                  <li><i class="tiny material-icons">class</i><a href="#">&nbsp;Commandes</a></li>
+                  <li><i class="tiny material-icons">supervisor_account</i><a href="#">&nbsp;Les clients</a></li>
+                </ul> 
+              </div> 
+          </nav>
+        ';
+        echo '
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">comment</i>Admin Information</div>
+                        <div class="collapsible-body">
+                             <div class="chip"> 
+                                Bienvenue vous avez connecté en tant que: '.$email.'  
+                                <i class="material-icons">close</i>
+                             </div>
+
+                             <a href="'.$url_logout.'" class="waves-effect waves-light btn"><i class="material-icons left">power_settings_new</i>Se déconnecte</a>
+                        </div>
+                    </li>
+                </ul>
+        ';
+   
+  }
+  else
+  {
+  $usession = new Container('useradmin'); 
+  if ($usession->offsetExists('uemail') && $usession->offsetGet('user')=='user'){
+        $email = $usession->offsetGet('uemail'); 
+        $lname = $usession->offsetGet('uprenom');
+        $url_logout = $this->url('useradmin',array('action' => 'logoutuser'));
+        $url_index = $this->url('useradmin',array('action' => 'index'));
+        echo '
+          <nav>
+              <div class="nav-wrapper light-blue darken-4">
+                <a href="'.$url_index.'" class="brand-logo">&nbsp;bdma</a>
+                <a href="#!" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">dialpad</i></a>
+                <ul class="right hide-on-med-and-down" id="screen-demo">
+               </ul>
+                <ul class="side-nav black" id="mobile-demo">
+                </ul> 
+              </div> 
+          </nav>
+        ';
+        echo '
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">comment</i>Admin User Information</div>
+                        <div class="collapsible-body">
+                             <div class="chip"> 
+                                Bienvenue : '.$lname.' vous avez connecté en tant que: '.$email.'  
+                                <i class="material-icons">close</i>
+                             </div>
+
+                             <a href="'.$url_logout.'" class="waves-effect waves-light btn"><i class="material-icons left">power_settings_new</i>Se déconnecte</a>
+                        </div>
+                    </li>
+                </ul>
+        ';
+   
+  }
+}
+?> 
+
+
+
+    <!--/////////////////////////Content///////////////////////////////-->
+                   <?php echo $this->content; ?>
+    <!--/////////////////////////Content///////////////////////////////-->
+
+
+
+
+    <!--/////////////////////////Scripts///////////////////////////////--> 
+
+            <script  type="text/javascript" charset="utf-8" >
+                $(document).ready(function() {
+                            function depth () {
+                              $('.card').addClass('z-depth-4');
+                            }
+                            $(".button-collapse").sideNav();
+                            $('#preloading').fadeOut();
+                            $('select').material_select();
+                            $('.tooltipped').tooltip({delay: 50});
+                            $('.datepicker').pickadate({
+                              selectMonths: true,
+                              selectYears: 15 ,
+                              format: 'yyyy-mm-dd'
+                            });
+
+                            $('.linex').animateNumber({ number: 11111 },9000200);
+                            picker.set('select', '2016-04-20', { format: 'yyyy-mm-dd' })
+                });
+            </script>
+    <!--/////////////////////////Scripts///////////////////////////////--> 
+</body>
+
+</html>

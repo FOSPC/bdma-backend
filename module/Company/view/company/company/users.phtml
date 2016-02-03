@@ -1,0 +1,55 @@
+ <?php
+ $title = 'Les utilisateurs d\'entreprise';
+ $this->headTitle($title);
+ ?>
+
+ <h1 class="center"><?php echo $this->escapeHtml($title); ?></h1>
+
+ <a href="/company" class="btn waves-effect waves-teal">revient a la page companys</a>
+ <br/>
+<br/><br/>
+      <div class="row">
+      <div class="col  s12 m12 l12">
+          <table class="table hoverable">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Admin</th>
+                <th>Genre</th>
+                <th>Email</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              $records = array();
+              foreach ($data as $result) {
+                  $records[] = $result;
+              }
+              foreach ($records as $comuser) {
+              ?>
+                    <tr>
+                      <td><?php echo $comuser->name;?></td>
+                      <td><?php echo $comuser->firstname;?></td>
+                      <td><?php echo $comuser->admin;?></td>
+                      <td><?php echo $comuser->gender;?></td>
+                      <td><?php echo $comuser->email;?></td>
+                      <td><?php echo $comuser->phone;?></td>
+                    </tr>
+              <?php }?>
+
+            </tbody>
+          </table>
+      </div>
+      </div>  
+<?php
+
+
+   //  print_r($records);
+   // var_dump($records);
+
+
+?>
+
+

@@ -1,0 +1,56 @@
+ <?php
+ $title = 'Les Commandes';
+ $this->headTitle($title);
+ ?>
+
+ <h1 class="center"><?php echo $this->escapeHtml($title); ?></h1>
+ <br/>
+<br/><br/>
+      <div class="row">
+      <div class="col  s12 m12 l12">
+          <table class="table hoverable">
+            <thead>
+              <tr>
+
+                <th>facsame</th>
+                <th>facenterprise</th>
+                <th>facstreet</th>
+                <th>facnumber</th>
+                <th>faccity</th>
+                <th>facpostal</th>
+                <th>faccountry</th>
+                <th>facbtw</th>
+                <th>Operation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($data as $inv) {
+              ?>
+                    <tr>
+                      <td><?php echo $inv->facsame;?></td>
+                      <td><?php echo $inv->facenterprise;?></td>
+                      <td><?php echo $inv->facstreet;?></td>
+                      <td><?php echo $inv->facnumber;?></td>
+                      <td><?php echo $inv->faccity;?></td>
+                      <td><?php echo $inv->facpostal;?></td>
+                      <td><?php echo $inv->faccountry;?></td>
+                      <td><?php echo $inv->facbtw;?></td>
+                   <td>
+
+<a data-position="top" data-delay="50" data-tooltip="Ajouter des produits a la commande" class="tooltipped btn waves-effect waves-teal" href="/invoice/add/<?php echo $inv->id ;?>">
+              <i class="material-icons">play_for_work</i>
+           </a>
+<a data-position="bottom" data-delay="50" data-tooltip="Afficher les produit de la commande" class="tooltipped btn waves-effect waves-teal" href="/invoice/detaill/<?php echo $inv->id ;?>">
+              <i class="material-icons">zoom_in</i>
+           </a>
+           </td>
+                    </tr>
+              <?php }?>
+
+            </tbody>
+          </table>
+      </div>
+      </div>  
+
+

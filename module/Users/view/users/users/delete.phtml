@@ -1,0 +1,35 @@
+<?php
+$title = 'Suppression';
+$this->headTitle($title);
+?>
+<?php
+$url = $this->url('users', array(
+    'action' => 'delete',
+    'id'     => $this->id,
+));
+?>
+  <div id="modaldeconfirmation" class="modal  red darken-4">
+    <div class="modal-content">
+      <h4>Confirmer votre supprission </h4>
+    <div class="card-panel red lighten-2">
+        <p>voulez vous vraiment supprimer cette utilisateur '<?php echo $this->escapeHtml($users->name);?>' ?</p>
+    </div>
+    </div>
+    <div class="modal-footer  red darken-5">
+    <form action="<?php echo $url; ?>" method="post">
+        <div>
+            <input type="hidden" name="id" value="<?php echo (int) $users->id; ?>" />
+            <input class="waves-effect waves-light btn" type="submit" name="del" value="Oui" />
+            <input class="waves-effect waves-light btn" type="submit" name="del" value="Non" />
+        </div>
+    </form>
+    </div>
+  </div>
+
+    <script type="text/javascript" charset="utf-8">
+              $(document).ready(function()
+              {
+                    $('.modal-trigger').leanModal();
+                    $('#modaldeconfirmation').openModal();  
+               });
+    </script>

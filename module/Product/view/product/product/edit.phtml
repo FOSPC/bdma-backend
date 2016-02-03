@@ -1,0 +1,86 @@
+
+
+<div class="row">
+  <div class="col m12">
+    <div class="card small z-depth-2  " id="log" style="height:auto; border-radius:10px;">
+
+        <div class="row">
+        <div style="width:100%;height:auto;padding:3px;margin:auto;background-color:teal;color:white" class=" center down col s12 m12 l12">
+          <h5>Formulaire de la modification des produits</h5>    
+          <i class="material-icons large">shopping_basket</i>
+        </div>
+        </div>
+
+      <form method="POST" name="users" action="/company/edit/<?php echo $prod['id_product_bdma'];?>" role="form" id="users"> 
+       
+       
+
+
+
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">spellcheck</i>
+            <input  name="name" id="name" type="text" class="validate" value="<?php echo $prod['product_bdma_name'];?>">
+            <label for="name">Nom Produit</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea name="desc" id="desc" class="materialize-textarea"><?php echo $prod['product_bdma_description'];?></textarea>
+            <label for="desc">Description</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">spellcheck</i>
+            <input  name="ref" id="ref" type="text" class="validate"  value="<?php echo $prod['product_bdma_reference'];?>">
+            <label for="ref">Reference</label>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">settings_ethernet</i>
+            <input id="prixm" name="prixm" type="text" class="validate"  value="<?php echo $prod['product_bdma_price_month'];?>">
+            <label for="prixm">Prix/M</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">settings_ethernet</i>
+            <input id="prixy" name="prixy" type="text" class="validate"  value="<?php echo $prod['product_bdma_price_year'];?>">
+            <label for="prixy">Prix/Y</label>
+          </div>
+        </div>
+
+
+
+
+        <div class="row">
+
+          <div class="input-field col s12">
+            <input id="dateb"  name="dateb"  type="date" class="datepicker"  value="<?php echo $prod['product_bdma_date_begin_valid'];?>">
+            <label for="dateb">date début de validation</label>
+          </div>
+
+          <div class="input-field col s12">
+            <input id="datef"  name="datef"  type="date" class="datepicker"  value="<?php echo $prod['product_bdma_date_end_valid'];?>">
+            <label for="datef">date fin de validation</label>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col s4 m4 l4">.</div>
+          <div class="col s4 m4 l4">
+            <input  class="waves-effect waves-light btn" type="submit" name="product" value="Modifier">
+          </div>
+          <div class="col s4 m4 l4">.</div>
+          <br>
+        </div>
+      </form>
+    </div>
+   </div>
+  </div>

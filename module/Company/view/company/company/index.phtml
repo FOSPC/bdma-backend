@@ -1,0 +1,91 @@
+ <?php
+ $title = 'Les entreprises';
+ $this->headTitle($title);
+ ?>
+<?php
+
+if (isset($_GET['status']) && $_GET['status']=="youcant" ) {
+  echo '<div class="card-panel red lighten-2">n est pas autorisé de supprimer cette entreprise</div>';
+}
+if (isset($_GET['status']) && $_GET['status']=="youcant1" ) {
+  echo '<div class="card-panel red lighten-2">n est pas autorisé de supprimer cette entreprise</div>';
+}
+
+
+if (isset($_GET['status']) && $_GET['status']=="needIdInv" ) {
+  echo '<div class="card-panel green lighten-2">il faut spécifier le code inv pour la Suppression</div>';
+}
+
+if (isset($_GET['status']) && $_GET['status']=="nouser" ) {
+  echo '<div class="card-panel red lighten-2">aucun utilisateur dans cette entreprise </div>';
+}
+
+if (isset($_GET['status']) && $_GET['status']=="nocomp" ) {
+  echo '<div class="card-panel red lighten-2">aucun entreprise avec ce code</div>';
+}
+
+
+if (isset($_GET['status']) && $_GET['status']=="yupdate" ) {
+  echo '<div class="card-panel green lighten-2">Modification réussi</div>';
+}
+if (isset($_GET['status']) && $_GET['status']=="deleted" ) {
+  echo '<div class="card-panel green lighten-2">Suppression réussi</div>';
+}
+
+
+?>
+ <h1 class="center"><?php echo $this->escapeHtml($title); ?></h1>
+ <br/>
+<br/><br/>
+      <div class="row">
+      <div class="col  s12 m12 l12">
+          <table class="table hoverable">
+            <thead>
+              <tr>
+                <th>Nom Enterprise</th>
+                <th>Street</th>
+                <th>Number</th>
+                <th>City</th>
+                <th>Postal</th>
+                <th>Country</th>
+                <th>Invoice</th>
+                <th>Nbr Users</th>
+                <th>Operation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($data as $com) {
+              ?>
+                    <tr>
+                      <td><?php echo $com->enterprise;?></td>
+                      <td><?php echo $com->street;?></td>
+                      <td><?php echo $com->number;?></td>
+                      <td><?php echo $com->city;?></td>
+                      <td><?php echo $com->postal;?></td>
+                      <td><?php echo $com->country;?></td>
+                      <td><?php echo $com->invoice;?></td>
+  <td><a href="/company/users?idcmp=<?php echo $com->id; ?>"><div class="chip"><?php echo $com->nbr;?></div></a></td>
+                   <td>
+
+<a data-position="bottom" data-delay="50" data-tooltip="modifier" class="tooltipped btn waves-effect waves-teal" href="/company/edit/<?php echo $com->id ;?>">
+              <i class="material-icons">system_update_alt</i>
+           </a>
+<a data-position="bottom" data-delay="50" data-tooltip="voire plus de données" class="tooltipped btn waves-effect waves-teal" href="/company/detail?idcomp=<?php echo $com->id ;?>">
+              <i class="material-icons">zoom_in</i>
+           </a>
+<a data-position="bottom" data-delay="50" data-tooltip="supprimer" class="tooltipped btn waves-effect waves-red" href="/company/delete/<?php echo $com->id ;?>?inv=<?php echo $com->invoice;?>">
+              <i class="material-icons">delete</i>
+           </a>
+
+
+           </td>
+                    </tr>
+              <?php }?>
+
+            </tbody>
+          </table>
+      </div>
+      </div>  
+
+

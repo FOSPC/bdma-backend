@@ -1,0 +1,66 @@
+ <?php
+ $title = 'Les produits de la Commande :'.$this->inv;
+ $this->headTitle($title);
+
+
+if (isset($_GET['status']) && $_GET['status']=="deleted" ) {
+  echo '<div class="card-panel red lighten-2">Suppression réussi</div>';
+}
+if (isset($_GET['status']) && $_GET['status']=="y_add" ) {
+  echo '<div class="card-panel green lighten-2">L\'ajout réussi</div>';
+}
+
+
+$url = $this->url('invoice', array('action' => 'add','id'=> $this->inv,));
+
+ ?>
+
+<a class="btn waves-effect waves-green" href="<?php echo $url; ?>">Ajouter un autre produit a la commande :<?php echo $this->inv;?> </a>
+
+ <h1 class="center"><?php echo $this->escapeHtml($title); ?></h1>
+ <br/>
+<br/><br/>
+      <div class="row">
+      <div class="col  s12 m12 l12">
+         <table class="table hoverable">
+            <thead>
+              <tr>
+                <th>Id Produit</th>
+                <th>Nom</th>
+                <th>Reference</th>
+                <th>Price/M</th>
+                <th>Company</th>
+                <th>User</th>
+                <th>Time</th>
+                <th>operation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($data as $pro) {
+              ?>
+                    <tr>
+                      <td><?php echo $pro->product;?></td>
+                      <td><?php echo $pro->product_bdma_name;?></td>
+                      <td><?php echo $pro->product_bdma_reference;?></td> 
+                      <td><?php echo $pro->product_bdma_price_month;?></td> 
+                      <td><?php echo $pro->company;?></td>                                           
+                      <td><?php echo $pro->user;?></td>
+                      <td><?php echo $pro->time;?></td>
+           <td>
+
+<a data-position="bottom" data-delay="50" data-tooltip="Supprimer" class="tooltipped btn waves-effect waves-red" href="/invoice/delete/<?php echo $pro->id ;?>?inv=<?php echo $pro->invoice ;?>">
+ <i class="material-icons">delete</i>
+</a>
+
+
+           </td>
+                    </tr>
+              <?php }?>
+
+            </tbody>
+          </table>
+      </div>
+      </div>  
+
+

@@ -1,0 +1,96 @@
+ <?php
+ $title = 'Les produits';
+ $this->headTitle($title);
+ ?>
+<?php
+
+if (isset($_GET['status']) && $_GET['status']=="y" ) {
+  echo '<div class="card-panel green lighten-2">la désactivation a réussi</div>';
+}
+
+if (isset($_GET['status']) && $_GET['status']=="nouser" ) {
+  echo '<div class="card-panel green lighten-2">il faut spécifier le code pour la modification</div>';
+}
+
+if (isset($_GET['status']) && $_GET['status']=="yupdate" ) {
+  echo '<div class="card-panel green lighten-2">la mise a jour a réussi</div>';
+}
+
+if (isset($_GET['status']) && $_GET['status']=="ydmn" ) {
+  echo '<div class="card-panel green lighten-2">l admin a ete change pour affecte les changement se deconnecte et réessayer avec le nouveau compte admin</div>';
+}
+
+if (isset($_GET['status']) && $_GET['status']=="n" ) {
+  echo '<div class="card-panel red lighten-2">vous devez specifier le code de lutilisateur pour le désactiver</div>';
+}
+
+if (isset($_GET['status']) && $_GET['status']=="ohh" ) {
+  echo "<div class='card-panel red lighten-2'>probleme dans l'exécution de cette operation</div>";
+}
+
+if (isset($_GET['status']) && $_GET['status']=="filed_add" ) {
+  echo "<div class='card-panel red lighten-2'>probleme dans l'ajout</div>";
+}
+
+if (isset($_GET['status']) && $_GET['status']=="y_add" ) {
+  echo "<div class='card-panel green lighten-2'>l'ajout terminer</div>";
+}
+
+if (isset($_GET['status']) && $_GET['status']=="erreur_fetching_view_data" ) {
+  echo "<div class='card-panel red lighten-2'>probleme de chargement des donnees</div>";
+}
+
+?>
+ <h1 class="center"><?php echo $this->escapeHtml($title); ?></h1>
+ <br/>
+<a style="margin-left:100px;" href="/product/add" class="waves-effect waves-teal btn ">Ajouter un produit</a>
+<br/><br/>
+      <div class="row">
+      <div class="col  s12 m12 l12">
+          <table class="table hoverable">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Reference</th>
+                <th>Price/M</th>
+                <th>Price/Y</th>
+                <th>Date bv</th>
+                <th>Date ev</th>
+                <th>Date creation</th>
+                <th>Date Update</th>
+                <th>operation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($data as $pro) {
+              ?>
+                    <tr>
+                      <td><?php echo $pro->product_bdma_name;?></td>
+                      <td><?php echo $pro->product_bdma_description;?></td>
+                      <td><?php echo $pro->product_bdma_reference;?></td>
+                      <td><?php echo $pro->product_bdma_price_month;?></td>
+                      <td><?php echo $pro->product_bdma_price_year;?></td>
+                      <td><?php echo $pro->product_bdma_date_begin_valid;?></td>
+                      <td><?php echo $pro->product_bdma_date_end_valid;?></td>
+                      <td><?php echo $pro->product_bdma_date_create;?></td>
+                      <td><?php echo $pro->product_bdma_date_update;?></td>
+
+           <td>
+
+<a data-position="bottom" data-delay="50" data-tooltip="modifier" class="tooltipped btn waves-effect waves-red" href="/product/edit/<?php echo $pro->id_product_bdma ;?>">
+              <i class="material-icons">system_update_alt</i>
+           </a>
+
+
+           </td>
+                    </tr>
+              <?php }?>
+
+            </tbody>
+          </table>
+      </div>
+      </div>  
+
+

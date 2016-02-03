@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: dutch\n"
+"POT-Creation-Date: 2015-12-26 18:36+0000\n"
+"PO-Revision-Date: 2015-12-26 18:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: arbib <soufiane.arbib.95@gmal.com>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ../view/album/album\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-SearchPath-0: index.phtml\n"
+
+#: index.phtml:35
+msgid "Add new album."
+msgstr "Nieuw album"
+
+#: index.phtml:42
+msgid "All rights reserved."
+msgstr "Alle rechten voorbehouden."
+
+#: index.phtml:43
+msgid "Homme"
+msgstr "de inwendige mens versterken"

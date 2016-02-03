@@ -1,0 +1,82 @@
+
+
+<div class="row">
+  <div class="col m12">
+    <div class="card small z-depth-2  " id="log" style="height:auto; border-radius:10px;">
+
+        <div class="row">
+        <div style="width:100%;height:auto;padding:3px;margin:auto;background-color:teal;color:white" class=" center down col s12 m12 l12">
+          <h5>Formulaire de l'ajout des produits a la commande</h5>    
+          <i class="material-icons large">shop</i>
+        </div>
+        </div>
+
+      <form method="POST" name="pro" action="/invoice/add/<?php echo $this->inv;?>" role="form" id="pro"> 
+      
+            
+            <div class="input-field col s12 m12">
+              <select name="user" class="browser-default">
+                <option value="" disabled selected>choisir utilisateur</option>
+                <?php
+                    foreach ($user as $u) {
+                       echo '<option value="'.$u->id.'">'.$u->name.'</option>';
+                    }
+                ?>
+              </select>
+              
+            </div>
+          
+            <div class="input-field col s12 m12">
+              <select name="company" class="browser-default">
+                <option value="" disabled selected>choisir entreprise</option>
+                <?php
+                    foreach ($company as $c) {
+                       echo '<option value="'.$c->id.'">'.$c->enterprise.'</option>';
+                    }
+                ?>
+              </select>
+              
+            </div>
+         
+            <div class="input-field col s12 m12">
+              <select name="product" class="browser-default">
+                <option value="" disabled selected>choisir produit</option>
+                <?php
+                    foreach ($product as $p) {
+                       echo '<option value="'.$p->id_product_bdma.'">'.$p->product_bdma_name.'</option>';
+                    }
+                ?>
+              </select>
+
+            </div>
+                          
+              <div class="input-field col s12 m12">
+              <select name="time" class="browser-default">
+                <option value="" disabled selected>choisir votre option</option>
+                <option value="y"  >Y</option>
+                <option value="m"  >M</option>
+              </select>
+
+            </div>
+
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">spellcheck</i>
+            <input  name="serviceprovider" id="serviceprovider" type="text" class="validate">
+            <label for="serviceprovider">Service Provider</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s4 m4 l4">.</div>
+          <div class="col s4 m4 l4">
+            <input  class="waves-effect waves-light btn" type="submit" name="pro" value="Ajouter">
+          </div>
+          <div class="col s4 m4 l4">.</div>
+          <br>
+        </div>
+      </form>
+    </div>
+   </div>
+  </div>

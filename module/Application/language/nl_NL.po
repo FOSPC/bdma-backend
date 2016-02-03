@@ -1,0 +1,194 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ZendSkeletonApplication\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-26 18:43+0000\n"
+"PO-Revision-Date: 2015-12-26 18:46+0000\n"
+"Last-Translator: Walter Tamboer\n"
+"Language-Team: ZF Contibutors <zf-devteam@zend.com>\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-SearchPath-0: Application\n"
+"X-Poedit-SearchPath-1: Album/view/album/album/index.phtml\n"
+"X-Poedit-SearchPath-2: Application/view/layout/layout.phtml\n"
+
+#: Album/view/album/album/index.phtml:35
+msgid "Add new album."
+msgstr "Nieuw album"
+
+#: Album/view/album/album/index.phtml:42
+#: Application/view/layout/layout.phtml:282
+msgid "All rights reserved."
+msgstr "Alle rechten voorbehouden."
+
+#: Album/view/album/album/index.phtml:43
+msgid "Homme"
+msgstr "de inwendige mens versterken"
+
+#: Application/view/application/index/index.phtml:2
+#, php-format
+msgid "Welcome to %sZend Framework 2%s"
+msgstr "Welkom bij %sZend Framework 2%s"
+
+#: Application/view/application/index/index.phtml:3
+#, php-format
+msgid ""
+"Congratulations! You have successfully installed the %sZF2 Skeleton "
+"Application%s. You are currently running Zend Framework version %s. This "
+"skeleton can serve as a simple starting point for you to begin building your "
+"application on ZF2."
+msgstr ""
+"Gefeliciteerd! Je hebt de %sZF2 Applicatie Fundering%s succesvol "
+"geinstalleerd. Je gebruikt Zend Framework versie %s. Deze fundering biedt je "
+"een startpunt om je ZF2 applicatie op voort te bouwen."
+
+#: Application/view/application/index/index.phtml:4
+msgid "Fork Zend Framework 2 on GitHub"
+msgstr "Fork Zend Framework 2 op GitHub"
+
+#: Application/view/application/index/index.phtml:12
+msgid "Follow Development"
+msgstr "Volg de Ontwikkeling"
+
+#: Application/view/application/index/index.phtml:15
+#, php-format
+msgid ""
+"Zend Framework 2 is under active development. If you are interested in "
+"following the development of ZF2, there is a special ZF2 portal on the "
+"official Zend Framework website which provides links to the ZF2 %swiki%s, "
+"%sdev blog%s, %sissue tracker%s, and much more. This is a great resource for "
+"staying up to date with the latest developments!"
+msgstr ""
+"Zend Framework 2 wordt actief ontwikkeld. Als je interesse hebt in het "
+"volgen van deze ontwikkelingen dan kun je de ZF2 portaal bezoeken op de "
+"officiële website van Zend Framework. Daar staan links naar de ZF2 %swiki%s, "
+"%sdev blog%s, %sissue tracker%s en nog veel meer. Het is het perfecte middel "
+"om up-to-date te blijven met de ontwikkelingen."
+
+#: Application/view/application/index/index.phtml:16
+msgid "ZF2 Development Portal"
+msgstr "ZF2 Ontwikkelaars Portaal"
+
+#: Application/view/application/index/index.phtml:24
+msgid "Discover Modules"
+msgstr "Ontdek Modules"
+
+#: Application/view/application/index/index.phtml:27
+#, php-format
+msgid ""
+"The community is working on developing a community site to serve as a "
+"repository and gallery for ZF2 modules. The project is available %son GitHub"
+"%s. The site is currently live and currently contains a list of some of the "
+"modules already available for ZF2."
+msgstr ""
+"De community werkt aan een eigen community website die dient als een "
+"bewaarplaats en galerij voor ZF2 modules. Het project is beschikbaar %sop "
+"GitHub%s. De site staat op dit moment live en bevat een lijst met modules "
+"die op dit moment beschikbaar zijn voor ZF2."
+
+#: Application/view/application/index/index.phtml:28
+msgid "Explore ZF2 Modules"
+msgstr "Verken ZF2 Modules"
+
+#: Application/view/application/index/index.phtml:36
+msgid "Help &amp; Support"
+msgstr "Hulp &amp; Support"
+
+#: Application/view/application/index/index.phtml:39
+#, php-format
+msgid ""
+"If you need any help or support while developing with ZF2, you may reach us "
+"via IRC: %s#zftalk on Freenode%s. We'd love to hear any questions or "
+"feedback you may have regarding the beta releases. Alternatively, you may "
+"subscribe and post questions to the %smailing lists%s."
+msgstr ""
+"Als je hulp nodig hebt tijdens het ontwikkelen met ZF2, dan kun je ons "
+"bereiken via IRC: %s#zftalk op Freenode%s. We beantwoorde met alle liefde je "
+"vragen en zouden graag feedback krijgen betreffende de beta releases. Je "
+"kunt je ook abonneren op de %smailing lists%s."
+
+#: Application/view/application/index/index.phtml:40
+msgid "Ping us on IRC"
+msgstr "Ping ons via IRC"
+
+#: Application/view/error/404.phtml:1
+msgid "A 404 error occurred"
+msgstr "De pagina kon niet worden gevonden."
+
+#: Application/view/error/404.phtml:10
+msgid "The requested controller was unable to dispatch the request."
+msgstr "De opgevraagde controller kon deze aanvraag niet verwerken."
+
+#: Application/view/error/404.phtml:13
+msgid ""
+"The requested controller could not be mapped to an existing controller class."
+msgstr "Er is geen mapping beschikbaar voor de opgevraagde controller."
+
+#: Application/view/error/404.phtml:16
+msgid "The requested controller was not dispatchable."
+msgstr "De opgevraagde controller is niet bruikbaar (dispatchable)."
+
+#: Application/view/error/404.phtml:19
+msgid "The requested URL could not be matched by routing."
+msgstr "Er is geen route gevonden die overeenkomt met de opgevraagde URL."
+
+#: Application/view/error/404.phtml:22
+msgid "We cannot determine at this time why a 404 was generated."
+msgstr ""
+"We kunnen op dit moment niet achterhalen waarom de pagina niet kon worden "
+"gevonden."
+
+#: Application/view/error/404.phtml:34
+msgid "Controller"
+msgstr "Controller"
+
+#: Application/view/error/404.phtml:41
+#, php-format
+msgid "resolves to %s"
+msgstr "verwijst naar %s"
+
+#: Application/view/error/404.phtml:53 Application/view/error/index.phtml:8
+msgid "Additional information"
+msgstr "Additionele informatie"
+
+#: Application/view/error/404.phtml:56 Application/view/error/404.phtml:81
+#: Application/view/error/index.phtml:11 Application/view/error/index.phtml:36
+msgid "File"
+msgstr "Bestand"
+
+#: Application/view/error/404.phtml:60 Application/view/error/404.phtml:85
+#: Application/view/error/index.phtml:15 Application/view/error/index.phtml:40
+msgid "Message"
+msgstr "Bericht"
+
+#: Application/view/error/404.phtml:64 Application/view/error/404.phtml:89
+#: Application/view/error/index.phtml:19 Application/view/error/index.phtml:44
+msgid "Stack trace"
+msgstr "Stack trace"
+
+#: Application/view/error/404.phtml:75 Application/view/error/index.phtml:30
+msgid "Previous exceptions"
+msgstr "Vorige excepties"
+
+#: Application/view/error/404.phtml:109 Application/view/error/index.phtml:64
+msgid "No Exception available"
+msgstr "Geen exceptie beschikbaar"
+
+#: Application/view/error/index.phtml:1
+msgid "An error occurred"
+msgstr "Er is een fout opgetreden"
+
+#: Application/view/layout/layout.phtml:263
+msgid "Home"
+msgstr "HOOFDVENSTER"
+
+#~ msgid "Skeleton Application"
+#~ msgstr "Applicatie Fundering"
+
+#~ msgid "Exception"
+#~ msgstr "Exceptie"

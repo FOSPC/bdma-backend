@@ -1,0 +1,155 @@
+ <?php
+ $title = 'Des statistiques générale';
+ $this->headTitle($title);
+ ?>
+ <h2 class="center waves-effect waves-block waves-teal"><?php echo $this->escapeHtml($title); ?></h2>
+
+
+<?php
+  if (isset($_GET['status']) && $_GET['status']=="erreur_fetching_statis_data" )
+  {
+    echo '<div class="card-panel red lighten-2">ohh, :(
+seems like the action cannot fetch targeted data from the database,
+please check the connection between the server and the data base ,and that all connection information are correct.
+if you have troubles with that ,you can contact developer for more information</div>';
+  }
+else{
+?>
+
+
+<div class="">
+      <div class="row">
+      <div class="col  s12 m12 l4">
+        <div class="card small z-depth-2 " style="background-color:#29b6f6 ;height:165px;">
+          <div class="card-image waves-effect waves-block waves-light icontainer">
+            <h1 class="center bold linex"><?php echo $statistic['company']; ?></h1>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Companys<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Companys<i class="material-icons right">close</i></span>
+            <p>You have more than : <?php echo $statistic['company']; ?> Companys</p>
+          </div>
+        </div>
+      </div>
+
+     <div class="col  s12 m12 l4">
+        <div class="card small z-depth-2 " style="background-color:#29b6f6 ;height:165px;">
+          <div class="card-image waves-effect waves-block waves-light icontainer">
+            <h1 class="center bold linex"><?php echo $statistic['paid']; ?></h1>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Paid products<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Paid products<i class="material-icons right">close</i></span>
+            <p>You have more than : <?php echo $statistic['paid']; ?> Paid products</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col  s12 m12 l4">
+        <div class="card small z-depth-2 " style="background-color:#29b6f6 ;height:165px;">
+          <div class="card-image waves-effect waves-block waves-light icontainer">
+            <h1 class="center bold linex"><?php echo $statistic['user']; ?></h1>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">users<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Companys<i class="material-icons right">close</i></span>
+            <p>You have more than : <?php echo $statistic['user']; ?> users</p>
+          </div>
+        </div>
+      </div> 
+
+
+
+      <div class="row">
+      <div class="col  s12 m12 l4">
+        <div class="card small z-depth-2 " style="background-color:#29b6f6 ;height:165px;">
+          <div class="card-image waves-effect waves-block waves-light icontainer">
+            <h1 class="center bold linex"><?php echo $statistic['invoice']; ?></h1>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">invoices<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">invoices<i class="material-icons right">close</i></span>
+            <p>You have more than : <?php echo $statistic['invoice']; ?> invoices</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col  s12 m12 l4">
+        <div class="card small z-depth-2 " style="background-color:#29b6f6 ;height:165px;">
+          <div class="card-image waves-effect waves-block waves-light icontainer">
+            <h1 class="center bold linex"><?php echo $statistic['productav']; ?></h1>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">products availabel<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">products availabel<i class="material-icons right">close</i></span>
+            <p>You have more than : <?php echo $statistic['productav']; ?> products availabel</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col  s12 m12 l4">
+        <div class="card small z-depth-2 " style="background-color:#29b6f6 ;height:165px;">
+          <div class="card-image waves-effect waves-block waves-light icontainer">
+            <h1 class="center bold linex"><?php echo $statistic['product']; ?></h1>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">product commanded<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"> commanded<i class="material-icons right">close</i></span>
+            <p>You have more than : <?php echo $statistic['product']; ?> product</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+      <div class="col  s12 m12 l12">
+          <table class="table hoverable">
+            <thead>
+              <tr>
+                <th>id product</th>
+                <th>date begin valid</th>
+                <th>date end valid</th>
+                <th>date create</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($history as $hist) {
+              ?>
+                    <tr>
+                      <td><?php echo $hist->id_product_bdma;?></td>
+                      <td><?php echo $hist->product_bdma_date_begin_valid;?></td>
+                      <td><?php echo $hist->product_bdma_date_end_valid;?></td>
+                      <td><?php echo $hist->product_bdma_date_create;?></td>
+                    </tr>
+              <?php }?>
+
+            </tbody>
+          </table>
+      </div>
+      </div>   
+</div>
+<?php }?>
+   <script type="text/javascript" charset="utf-8" >
+    var options = [ {selector: '.row', offset: 50, callback: 'Materialize.toast("Salut", 1500 )' }];
+    Materialize.scrollFire(options); 
+   </script>
